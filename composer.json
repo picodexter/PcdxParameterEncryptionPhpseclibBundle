@@ -1,0 +1,37 @@
+{
+    "name": "picodexter/parameter-encryption-phpseclib-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony PcdxParameterEncryptionBundle add-on for phpseclib/phpseclib",
+    "keywords": ["config", "parameter", "encryption", "phpseclib/phpseclib"],
+    "homepage": "https://picodexter.io/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "picodexter",
+            "homepage": "https://picodexter.io/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/picodexter/PcdxParameterEncryptionBundle"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "phpseclib/phpseclib": "^2.0",
+        "picodexter/parameter-encryption-bundle": "dev-master as 1.0",
+        "symfony/framework-bundle": "^2.7 || ^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Picodexter\\ParameterEncryptionPhpseclibBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}
