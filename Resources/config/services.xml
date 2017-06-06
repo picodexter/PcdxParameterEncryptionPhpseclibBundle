@@ -29,5 +29,10 @@
             class="phpseclib\Crypt\RC2"
             public="false">
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.rc4"
+            class="phpseclib\Crypt\RC4"
+            public="false">
+        </service>
     </services>
 </container>
