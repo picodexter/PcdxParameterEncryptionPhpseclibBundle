@@ -215,5 +215,11 @@
             public="false">
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_initialization_vector_cipher.3des" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.256"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\PhpseclibHandlerProxyDecrypter"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_initialization_vector_cipher.aes.256" />
+        </service>
     </services>
 </container>
