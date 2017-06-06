@@ -349,5 +349,11 @@
             public="false">
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.handler.phpseclib_encoded_cipher.rc2" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc4"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Encrypter\PhpseclibHandlerProxyEncrypter"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.handler.phpseclib_encoded_cipher.rc4" />
+        </service>
     </services>
 </container>
