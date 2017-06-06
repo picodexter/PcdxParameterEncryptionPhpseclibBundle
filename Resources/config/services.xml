@@ -5,6 +5,12 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.factory.3des"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\Cipher\CipherFactory"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.3des" />
+        </service>
+
         <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.3des"
             class="phpseclib\Crypt\TripleDES"
             public="false">
