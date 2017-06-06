@@ -89,6 +89,12 @@
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.factory.rc4" />
         </service>
 
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.rijndael"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\Cipher\CipherGenerator"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.factory.rijndael" />
+        </service>
+
         <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.3des"
             class="phpseclib\Crypt\TripleDES"
             public="false">
