@@ -331,5 +331,11 @@
             public="false">
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.handler.phpseclib_initialization_vector_cipher.aes.256" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.blowfish"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Encrypter\PhpseclibHandlerProxyEncrypter"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.handler.phpseclib_encoded_cipher.blowfish" />
+        </service>
     </services>
 </container>
