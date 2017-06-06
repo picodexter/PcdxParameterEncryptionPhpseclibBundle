@@ -45,6 +45,12 @@
             public="false">
         </service>
 
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.initialization_vector_generator"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\InitializationVectorGenerator"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.random_string_generator" />
+        </service>
+
         <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.random_string_generator"
             class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\RandomStringGenerator"
             public="false">
