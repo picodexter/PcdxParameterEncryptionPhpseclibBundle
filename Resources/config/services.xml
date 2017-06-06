@@ -264,5 +264,12 @@
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.blowfish" />
             <argument type="service" id="pcdx_parameter_encryption.encryption.value.encoding.encoder.base64" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.handler.phpseclib_encoded_cipher.rc2"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Encrypter\Handler\PhpseclibEncodedCipherEncrypterHandler"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.rc2" />
+            <argument type="service" id="pcdx_parameter_encryption.encryption.value.encoding.encoder.base64" />
+        </service>
     </services>
 </container>
