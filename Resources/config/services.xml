@@ -179,5 +179,12 @@
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.twofish" />
             <argument type="service" id="pcdx_parameter_encryption.encryption.value.encoding.decoder.base64" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_initialization_vector_cipher.3des"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\Handler\PhpseclibInitializationVectorCipherDecrypterHandler"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.3des" />
+            <argument type="service" id="pcdx_parameter_encryption.encryption.value.merge.initialization_vector.value_splitter.base64" />
+        </service>
     </services>
 </container>
