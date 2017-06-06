@@ -47,6 +47,12 @@
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.rijndael" />
         </service>
 
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.factory.twofish"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\Cipher\CipherFactory"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.twofish" />
+        </service>
+
         <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.3des"
             class="phpseclib\Crypt\TripleDES"
             public="false">
