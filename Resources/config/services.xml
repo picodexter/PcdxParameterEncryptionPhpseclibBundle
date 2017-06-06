@@ -14,5 +14,10 @@
             class="phpseclib\Crypt\AES"
             public="false">
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.blowfish"
+            class="phpseclib\Crypt\Blowfish"
+            public="false">
+        </service>
     </services>
 </container>
