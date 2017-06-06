@@ -172,5 +172,12 @@
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.rc4" />
             <argument type="service" id="pcdx_parameter_encryption.encryption.value.encoding.decoder.base64" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_encoded_cipher.twofish"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\Handler\PhpseclibEncodedCipherDecrypterHandler"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.twofish" />
+            <argument type="service" id="pcdx_parameter_encryption.encryption.value.encoding.decoder.base64" />
+        </service>
     </services>
 </container>
