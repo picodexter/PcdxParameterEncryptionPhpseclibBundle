@@ -44,5 +44,10 @@
             class="phpseclib\Crypt\Twofish"
             public="false">
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.random_string_generator"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\RandomStringGenerator"
+            public="false">
+        </service>
     </services>
 </container>
