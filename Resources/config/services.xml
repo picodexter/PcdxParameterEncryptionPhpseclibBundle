@@ -194,5 +194,12 @@
             <argument type="service" id="pcdx_parameter_encryption.encryption.value.merge.initialization_vector.value_splitter.base64" />
             <argument>256</argument>
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_initialization_vector_cipher.des"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\Handler\PhpseclibInitializationVectorCipherDecrypterHandler"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.des" />
+            <argument type="service" id="pcdx_parameter_encryption.encryption.value.merge.initialization_vector.value_splitter.base64" />
+        </service>
     </services>
 </container>
