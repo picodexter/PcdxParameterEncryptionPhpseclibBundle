@@ -9,5 +9,10 @@
             class="phpseclib\Crypt\TripleDES"
             public="false">
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.aes"
+            class="phpseclib\Crypt\AES"
+            public="false">
+        </service>
     </services>
 </container>
