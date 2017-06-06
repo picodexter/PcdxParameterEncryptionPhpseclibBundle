@@ -227,5 +227,11 @@
             public="false">
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_encoded_cipher.blowfish" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.des"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\PhpseclibHandlerProxyDecrypter"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_initialization_vector_cipher.des" />
+        </service>
     </services>
 </container>
