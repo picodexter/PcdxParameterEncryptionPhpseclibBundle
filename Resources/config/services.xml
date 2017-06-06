@@ -361,5 +361,11 @@
             public="false">
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.handler.phpseclib_initialization_vector_cipher.rijndael.256" />
         </service>
+
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.twofish"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Encrypter\PhpseclibHandlerProxyEncrypter"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.encrypter.handler.phpseclib_encoded_cipher.twofish" />
+        </service>
     </services>
 </container>
