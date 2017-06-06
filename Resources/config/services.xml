@@ -71,6 +71,12 @@
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.factory.blowfish" />
         </service>
 
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.generator.des"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\Cipher\CipherGenerator"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.factory.des" />
+        </service>
+
         <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.3des"
             class="phpseclib\Crypt\TripleDES"
             public="false">
