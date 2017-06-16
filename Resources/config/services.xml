@@ -257,6 +257,13 @@
             <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.handler.phpseclib_initialization_vector_cipher.rijndael.256" />
         </service>
 
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa"
+            class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\PhpseclibRsaDecrypter"
+            public="false">
+            <argument type="service" id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.rsa" />
+            <argument type="service" id="pcdx_parameter_encryption.encryption.value.encoding.decoder.base64" />
+        </service>
+
         <service id="pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.twofish"
             class="Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\PhpseclibHandlerProxyDecrypter"
             public="false">
