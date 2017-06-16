@@ -9,6 +9,25 @@ and enables simple usage of it in combination with the Composer package
 [![Build Status](https://img.shields.io/travis/picodexter/PcdxParameterEncryptionPhpseclibBundle/master.svg?style=flat)](https://travis-ci.org/picodexter/PcdxParameterEncryptionPhpseclibBundle)
 [![Code Coverage](https://img.shields.io/coveralls/picodexter/PcdxParameterEncryptionPhpseclibBundle/master.svg?style=flat)](https://coveralls.io/github/picodexter/PcdxParameterEncryptionPhpseclibBundle)
 
+## Features
+
+You will be able to use the following ciphers:
+
+### Symmetric Ciphers
+
+* AES
+* Blowfish
+* DES
+* RC2
+* RC4
+* Rijndael
+* Triple DES / 3DES
+* Twofish
+
+### Asymmetric Ciphers
+
+* RSA
+
 ## Documentation
 
 The documentation source files are located in the `Resources/doc/` directory of
