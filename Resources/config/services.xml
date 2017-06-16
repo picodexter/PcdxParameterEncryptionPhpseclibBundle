@@ -136,6 +136,11 @@
             public="false">
         </service>
 
+        <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.rsa"
+            class="phpseclib\Crypt\RSA"
+            public="false">
+        </service>
+
         <service id="pcdx_parameter_encryption_phpseclib.encryption.algorithm.phpseclib.cipher.template.twofish"
             class="phpseclib\Crypt\Twofish"
             public="false">
