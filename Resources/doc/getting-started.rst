@@ -58,25 +58,41 @@ You can now use the following services in the PcdxParameterEncryptionBundle conf
 
 * encrypter:
 
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.3des``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.aes.256``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.blowfish``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.des``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc2``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc4``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rijndael.256``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.twofish``
+  * symmetric ciphers:
+
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.3des``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.aes.KEY_LENGTH`` where ``KEY_LENGTH`` is
+      the key length and can be 128, 192 or 256
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.blowfish``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.des``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc2``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc4``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rijndael.KEY_LENGTH`` where ``KEY_LENGTH`` is
+      the key length and can be 128, 160, 192, 224 or 256
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.twofish``
+
+  * asymmetric ciphers:
+
+    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rsa``
 
 * decrypter:
 
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.3des``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.256``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.blowfish``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.des``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc2``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc4``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rijndael.256``
-  * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.twofish``
+  * symmetric ciphers:
+
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.3des``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.KEY_LENGTH`` where ``KEY_LENGTH`` is
+      the key length and can be 128, 192 or 256
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.blowfish``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.des``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc2``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc4``
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rijndael.KEY_LENGTH`` where ``KEY_LENGTH`` is
+      the key length and can be 128, 160, 192, 224 or 256
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.twofish``
+
+  * asymmetric ciphers:
+
+    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa``
 
 Example:
 
