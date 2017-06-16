@@ -116,6 +116,17 @@ Example:
                         decryption:
                             service: 'pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.256'
                             key: '%parameter_encryption.phpseclib.aes.256.key%'
+                    -   id: 'phpseclib_rsa'
+                        pattern:
+                            type: 'value_prefix'
+                            arguments:
+                                -   '=#!PPE!psl:rsa!#='
+                        encryption:
+                            service: 'pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rsa'
+                            key: '%parameter_encryption.phpseclib.rsa.key.encryption%'
+                        decryption:
+                            service: 'pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa'
+                            key: '%parameter_encryption.phpseclib.rsa.key.decryption%'
 
         .. code-block:: xml
 
@@ -132,10 +143,23 @@ Example:
                         <ppe:pattern type="value_prefix">
                             <ppe:argument>=#!PPE!psl:aes:256!#=</ppe:argument>
                         </ppe:pattern>
-                        <ppe:encryption service="pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.aes.256"
-                            key="%parameter_encryption.phpseclib.aes.256.key%" />
-                        <ppe:decryption service="pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.256"
-                            key="%parameter_encryption.phpseclib.aes.256.key%" />
+                        <ppe:encryption service="pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.aes.256">
+                            <ppe:key>%parameter_encryption.phpseclib.aes.256.key%</ppe:key>
+                        </ppe:encryption>
+                        <ppe:decryption service="pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.256">
+                            <ppe:key>%parameter_encryption.phpseclib.aes.256.key%</ppe:key>
+                        </ppe:decryption>
+                    </ppe:algorithm>
+                    <ppe:algorithm id="phpseclib_rsa">
+                        <ppe:pattern type="value_prefix">
+                            <ppe:argument>=#!PPE!psl:rsa!#=</ppe:argument>
+                        </ppe:pattern>
+                        <ppe:encryption service="pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rsa">
+                            <ppe:key>%parameter_encryption.phpseclib.rsa.key.encryption%</ppe:key>
+                        </ppe:encryption>
+                        <ppe:decryption service="pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa">
+                            <ppe:key>%parameter_encryption.phpseclib.rsa.key.decryption%</ppe:key>
+                        </ppe:decryption>
                     </ppe:algorithm>
                 </ppe:config>
             </container>
@@ -162,6 +186,21 @@ Example:
                                 'key' => '%parameter_encryption.phpseclib.aes.256.key%',
                             ],
                         ],
+                        [
+                            'id' => 'phpseclib_rsa',
+                            'pattern' => [
+                                'type' => 'value_prefix',
+                                'arguments' => ['=#!PPE!psl:rsa!#='],
+                            ],
+                            'encryption' => [
+                                'service' => 'pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rsa',
+                                'key' => '%parameter_encryption.phpseclib.rsa.key.encryption%',
+                            ],
+                            'decryption' => [
+                                'service' => 'pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa',
+                                'key' => '%parameter_encryption.phpseclib.rsa.key.decryption%',
+                            ],
+                        ],
                     ],
                 ]
             );
@@ -175,6 +214,14 @@ Example:
             # app/config/parameters.yml
             parameters:
                 parameter_encryption.phpseclib.aes.256.key: 'YOUR_ENCRYPTION_KEY'
+                parameter_encryption.phpseclib.rsa.key.encryption: |
+                    -----BEGIN PUBLIC KEY-----
+                    [...]
+                    -----END PUBLIC KEY-----
+                parameter_encryption.phpseclib.rsa.key.decryption: |
+                    -----BEGIN RSA PRIVATE KEY-----
+                    [...]
+                    -----END RSA PRIVATE KEY-----
 
         .. code-block:: xml
 
@@ -187,6 +234,16 @@ Example:
 
                 <parameters>
                     <parameter key="parameter_encryption.phpseclib.aes.256.key">YOUR_ENCRYPTION_KEY</parameter>
+                    <parameter key="parameter_encryption.phpseclib.rsa.key.encryption">
+                        -----BEGIN PUBLIC KEY-----
+                        [...]
+                        -----END PUBLIC KEY-----
+                    </parameter>
+                    <parameter key="parameter_encryption.phpseclib.rsa.key.decryption">
+                        -----BEGIN RSA PRIVATE KEY-----
+                        [...]
+                        -----END RSA PRIVATE KEY-----
+                    </parameter>
                 </parameters>
             </container>
 
@@ -194,6 +251,18 @@ Example:
 
             // app/config/parameters.php
             $container->setParameter('parameter_encryption.phpseclib.aes.256.key', 'YOUR_ENCRYPTION_KEY');
+            $container->setParameter(
+                'parameter_encryption.phpseclib.rsa.key.encryption',
+                '-----BEGIN PUBLIC KEY-----
+                [...]
+                -----END PUBLIC KEY-----'
+            );
+            $container->setParameter(
+                'parameter_encryption.phpseclib.rsa.key.decryption',
+                '-----BEGIN RSA PRIVATE KEY-----
+                [...]
+                -----END RSA PRIVATE KEY-----'
+            );
 
 .. _PcdxParameterEncryptionBundle: https://github.com/picodexter/PcdxParameterEncryptionBundle
 .. _phpseclib/phpseclib: https://github.com/phpseclib/phpseclib
