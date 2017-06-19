@@ -45,27 +45,21 @@ class PhpseclibHandlerProxyEncrypterTest extends \PHPUnit_Framework_TestCase
         $this->handler = null;
     }
 
-    public function testEncryptValueSuccessWithKey()
+    public function testEncryptValueSuccess()
     {
         $plainValue = 'plain text';
         $encryptionKey = 'some key';
         $preparedEncrypted = 'encrypted value';
 
-        $this->setUpEncrypterHandlerEncryptValue($plainValue, $encryptionKey, $preparedEncrypted);
+        $this->handler->expects($this->once())
+            ->method('encryptValue')
+            ->with(
+                $this->identicalTo($plainValue),
+                $this->identicalTo($encryptionKey)
+            )
+            ->will($this->returnValue($preparedEncrypted));
 
         $encryptedValue = $this->encrypter->encryptValue($plainValue, $encryptionKey);
-
-        $this->assertSame($preparedEncrypted, $encryptedValue);
-    }
-
-    public function testEncryptValueSuccessWithoutKey()
-    {
-        $plainValue = 'plain text';
-        $preparedEncrypted = 'encrypted value';
-
-        $this->setUpEncrypterHandlerEncryptValue($plainValue, null, $preparedEncrypted);
-
-        $encryptedValue = $this->encrypter->encryptValue($plainValue);
 
         $this->assertSame($preparedEncrypted, $encryptedValue);
     }
@@ -78,23 +72,5 @@ class PhpseclibHandlerProxyEncrypterTest extends \PHPUnit_Framework_TestCase
     private function createEncrypterHandlerInterfaceMock()
     {
         return $this->getMockBuilder(EncrypterHandlerInterface::class)->getMock();
-    }
-
-    /**
-     * Set up EncrypterHandler: encryptValue.
-     *
-     * @param string      $plainValue
-     * @param string|null $encryptionKey
-     * @param string      $encryptedValue
-     */
-    private function setUpEncrypterHandlerEncryptValue($plainValue, $encryptionKey, $encryptedValue)
-    {
-        $this->handler->expects($this->once())
-            ->method('encryptValue')
-            ->with(
-                $this->identicalTo($plainValue),
-                $this->identicalTo($encryptionKey)
-            )
-            ->will($this->returnValue($encryptedValue));
     }
 }

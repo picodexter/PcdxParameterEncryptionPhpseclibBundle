@@ -37,7 +37,7 @@ class PhpseclibHandlerProxyEncrypter implements EncrypterInterface
     /**
      * @inheritDoc
      */
-    public function encryptValue($plainValue, $encryptionKey = null)
+    public function encryptValue($plainValue, $encryptionKey)
     {
         return $this->handler->encryptValue($plainValue, $encryptionKey);
     }
