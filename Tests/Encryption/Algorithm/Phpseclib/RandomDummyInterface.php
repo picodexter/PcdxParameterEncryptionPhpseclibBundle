@@ -24,6 +24,7 @@ interface RandomDummyInterface
      * eg. for RSA key generation.
      *
      * @param int $length
+     *
      * @return string
      */
     public static function string($length);
