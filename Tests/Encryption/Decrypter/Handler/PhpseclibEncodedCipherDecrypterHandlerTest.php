@@ -14,6 +14,7 @@ namespace Picodexter\ParameterEncryptionPhpseclibBundle\Tests\Encryption\Decrypt
 use Exception;
 use phpseclib\Crypt\Base as BaseCipher;
 use Picodexter\ParameterEncryptionBundle\Encryption\Value\Encoding\DecoderInterface;
+use Picodexter\ParameterEncryptionBundle\Exception\Encryption\DecrypterException;
 use Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\Cipher\CipherGeneratorInterface;
 use Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\Handler\PhpseclibEncodedCipherDecrypterHandler;
 
@@ -55,11 +56,10 @@ class PhpseclibEncodedCipherDecrypterHandlerTest extends \PHPUnit_Framework_Test
         $this->cipherGenerator = null;
     }
 
-    /**
-     * @expectedException \Picodexter\ParameterEncryptionBundle\Exception\Encryption\DecrypterException
-     */
     public function testDecryptValueException()
     {
+        $this->expectException(DecrypterException::class);
+
         $encryptedValue = 'encrypted value';
 
         $cipher = $this->createBaseCipherMock();

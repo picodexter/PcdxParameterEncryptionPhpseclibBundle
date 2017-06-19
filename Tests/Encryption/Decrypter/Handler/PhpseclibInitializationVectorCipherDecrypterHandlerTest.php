@@ -15,6 +15,7 @@ use Exception;
 use phpseclib\Crypt\Base as BaseCipher;
 use Picodexter\ParameterEncryptionBundle\Encryption\Value\Merge\InitializationVector\SplitValueBag;
 use Picodexter\ParameterEncryptionBundle\Encryption\Value\Merge\InitializationVector\ValueSplitterInterface;
+use Picodexter\ParameterEncryptionBundle\Exception\Encryption\DecrypterException;
 use Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Algorithm\Phpseclib\Cipher\CipherGeneratorInterface;
 use Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\Handler\PhpseclibInitializationVectorCipherDecrypterHandler;
 use ReflectionProperty;
@@ -108,11 +109,10 @@ class PhpseclibInitializationVectorCipherDecrypterHandlerTest extends \PHPUnit_F
         ];
     }
 
-    /**
-     * @expectedException \Picodexter\ParameterEncryptionBundle\Exception\Encryption\DecrypterException
-     */
     public function testDecryptValueException()
     {
+        $this->expectException(DecrypterException::class);
+
         $encryptedValue = 'encrypted value';
         $blockLength = 128;
 

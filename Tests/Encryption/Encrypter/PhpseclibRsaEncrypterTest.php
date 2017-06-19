@@ -14,6 +14,7 @@ namespace Picodexter\ParameterEncryptionPhpseclibBundle\Tests\Encryption\Encrypt
 use Exception;
 use phpseclib\Crypt\RSA;
 use Picodexter\ParameterEncryptionBundle\Encryption\Value\Encoding\EncoderInterface;
+use Picodexter\ParameterEncryptionBundle\Exception\Encryption\EncrypterException;
 use Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Encrypter\PhpseclibRsaEncrypter;
 
 class PhpseclibRsaEncrypterTest extends \PHPUnit_Framework_TestCase
@@ -54,11 +55,10 @@ class PhpseclibRsaEncrypterTest extends \PHPUnit_Framework_TestCase
         $this->cipher = null;
     }
 
-    /**
-     * @expectedException \Picodexter\ParameterEncryptionBundle\Exception\Encryption\EncrypterException
-     */
     public function testEncryptValueException()
     {
+        $this->expectException(EncrypterException::class);
+
         $plainValue = 'plain value';
         $encryptionKey = 'some key';
 

@@ -15,6 +15,7 @@ use Exception;
 use phpseclib\Crypt\RSA;
 use Picodexter\ParameterEncryptionBundle\Encryption\Decrypter\DecrypterInterface;
 use Picodexter\ParameterEncryptionBundle\Encryption\Value\Encoding\DecoderInterface;
+use Picodexter\ParameterEncryptionBundle\Exception\Encryption\DecrypterException;
 use Picodexter\ParameterEncryptionPhpseclibBundle\Encryption\Decrypter\PhpseclibRsaDecrypter;
 
 class PhpseclibRsaDecrypterTest extends \PHPUnit_Framework_TestCase
@@ -55,11 +56,10 @@ class PhpseclibRsaDecrypterTest extends \PHPUnit_Framework_TestCase
         $this->cipher = null;
     }
 
-    /**
-     * @expectedException \Picodexter\ParameterEncryptionBundle\Exception\Encryption\DecrypterException
-     */
     public function testDecryptValueException()
     {
+        $this->expectException(DecrypterException::class);
+
         $encryptedValue = 'encrypted value';
         $decryptionKey = 'some key';
 
