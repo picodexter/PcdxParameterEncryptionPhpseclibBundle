@@ -56,47 +56,47 @@ Step 3: Configuration
 
 You can now use the following services in the PcdxParameterEncryptionBundle configuration:
 
-* encrypter:
+*   encrypter:
 
-  * symmetric ciphers:
+    *   symmetric ciphers:
 
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.3des``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.aes.KEY_LENGTH`` where ``KEY_LENGTH`` is
-      the key length and can be 128, 192 or 256
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.blowfish``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.des``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc2``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc4``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rijndael.KEY_LENGTH`` where ``KEY_LENGTH`` is
-      the key length and can be 128, 160, 192, 224 or 256
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.twofish``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.3des``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.aes.KEY_LENGTH``
+            where ``KEY_LENGTH`` is the key length and can be 128, 192 or 256
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.blowfish``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.des``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc2``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rc4``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rijndael.KEY_LENGTH``
+            where ``KEY_LENGTH`` is the key length and can be 128, 160, 192, 224 or 256
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.twofish``
 
-  * asymmetric ciphers:
+    *   asymmetric ciphers:
 
-    * ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rsa``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rsa``
 
-* decrypter:
+*   decrypter:
 
-  * symmetric ciphers:
+    *   symmetric ciphers:
 
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.3des``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.KEY_LENGTH`` where ``KEY_LENGTH`` is
-      the key length and can be 128, 192 or 256
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.blowfish``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.des``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc2``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc4``
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rijndael.KEY_LENGTH`` where ``KEY_LENGTH`` is
-      the key length and can be 128, 160, 192, 224 or 256
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.twofish``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.3des``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.KEY_LENGTH``
+            where ``KEY_LENGTH`` is the key length and can be 128, 192 or 256
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.blowfish``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.des``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc2``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rc4``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rijndael.KEY_LENGTH``
+            where ``KEY_LENGTH`` is the key length and can be 128, 160, 192, 224 or 256
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.twofish``
 
-  * asymmetric ciphers:
+    *   asymmetric ciphers:
 
-    * ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa``
+        *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa``
 
 Example:
 
-1. Application configuration:
+1.  Application configuration:
 
     .. configuration-block::
 
@@ -205,7 +205,7 @@ Example:
                 ]
             );
 
-2. Parameters:
+2.  Parameters:
 
     .. configuration-block::
 
