@@ -26,5 +26,5 @@ interface RandomDummyInterface
      * @param int $length
      * @return string
      */
-    static function string($length);
+    public static function string($length);
 }

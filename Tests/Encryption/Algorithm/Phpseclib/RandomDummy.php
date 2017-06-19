@@ -29,7 +29,7 @@ class RandomDummy implements RandomDummyInterface
     /**
      * @inheritDoc
      */
-    static function string($length)
+    public static function string($length)
     {
         self::$lastMethodCalled = 'string';
         self::$lastCallArguments = func_get_args();
