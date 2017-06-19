@@ -60,45 +60,37 @@ class PhpseclibRsaEncrypterTest extends \PHPUnit_Framework_TestCase
     public function testEncryptValueException()
     {
         $plainValue = 'plain value';
+        $encryptionKey = 'some key';
 
         $this->cipher->expects($this->once())
             ->method('encrypt')
             ->will($this->throwException(new Exception()));
 
-        $this->encrypter->encryptValue($plainValue);
+        $this->encrypter->encryptValue($plainValue, $encryptionKey);
     }
 
-    public function testEncryptValueSuccessWithKey()
+    public function testEncryptValueSuccess()
     {
         $plainValue = 'plain value';
         $encryptionKey = 'some key';
         $prepEncryptedValue = 'encrypted value';
         $prepEncodedValue = 'encoded encrypted value';
 
-        $this->setUpCipherLoadKey($encryptionKey);
+        $this->cipher->expects($this->once())
+            ->method('loadKey')
+            ->with($this->identicalTo($encryptionKey));
 
-        $this->setUpCipherEncrypt($plainValue, $prepEncryptedValue);
+        $this->cipher->expects($this->once())
+            ->method('encrypt')
+            ->with($this->identicalTo($plainValue))
+            ->will($this->returnValue($prepEncryptedValue));
 
-        $this->setUpEncoderEncode($prepEncryptedValue, $prepEncodedValue);
+        $this->encoder->expects($this->once())
+            ->method('encode')
+            ->with($this->identicalTo($prepEncryptedValue))
+            ->will($this->returnValue($prepEncodedValue));
 
         $encryptedValue = $this->encrypter->encryptValue($plainValue, $encryptionKey);
-
-        $this->assertSame($prepEncodedValue, $encryptedValue);
-    }
-
-    public function testEncryptValueSuccessWithoutKey()
-    {
-        $plainValue = 'plain value';
-        $prepEncryptedValue = 'encrypted value';
-        $prepEncodedValue = 'encoded encrypted value';
-
-        $this->setUpCipherLoadKey(null);
-
-        $this->setUpCipherEncrypt($plainValue, $prepEncryptedValue);
-
-        $this->setUpEncoderEncode($prepEncryptedValue, $prepEncodedValue);
-
-        $encryptedValue = $this->encrypter->encryptValue($plainValue);
 
         $this->assertSame($prepEncodedValue, $encryptedValue);
     }
@@ -121,45 +113,5 @@ class PhpseclibRsaEncrypterTest extends \PHPUnit_Framework_TestCase
     private function createRsaMock()
     {
         return $this->getMockBuilder(RSA::class)->getMock();
-    }
-
-    /**
-     * Set up cipher: encrypt.
-     *
-     * @param string $plainValue
-     * @param string $encryptedValue
-     */
-    private function setUpCipherEncrypt($plainValue, $encryptedValue)
-    {
-        $this->cipher->expects($this->once())
-            ->method('encrypt')
-            ->with($this->identicalTo($plainValue))
-            ->will($this->returnValue($encryptedValue));
-    }
-
-    /**
-     * Set up cipher: loadKey.
-     *
-     * @param string|null $encryptionKey
-     */
-    private function setUpCipherLoadKey($encryptionKey)
-    {
-        $this->cipher->expects($this->once())
-            ->method('loadKey')
-            ->with($this->identicalTo($encryptionKey));
-    }
-
-    /**
-     * Set up Encoder: encode.
-     *
-     * @param string $encryptedValue
-     * @param string $encodedValue
-     */
-    private function setUpEncoderEncode($encryptedValue, $encodedValue)
-    {
-        $this->encoder->expects($this->once())
-            ->method('encode')
-            ->with($this->identicalTo($encryptedValue))
-            ->will($this->returnValue($encodedValue));
     }
 }
