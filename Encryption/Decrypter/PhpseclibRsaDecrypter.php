@@ -47,7 +47,7 @@ class PhpseclibRsaDecrypter implements DecrypterInterface
     /**
      * @inheritDoc
      */
-    public function decryptValue($encryptedValue, $decryptionKey = null)
+    public function decryptValue($encryptedValue, $decryptionKey)
     {
         try {
             $decodedValue = $this->decoder->decode($encryptedValue);

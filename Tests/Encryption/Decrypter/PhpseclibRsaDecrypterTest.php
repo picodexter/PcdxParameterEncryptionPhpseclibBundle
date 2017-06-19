@@ -61,45 +61,37 @@ class PhpseclibRsaDecrypterTest extends \PHPUnit_Framework_TestCase
     public function testDecryptValueException()
     {
         $encryptedValue = 'encrypted value';
+        $decryptionKey = 'some key';
 
         $this->cipher->expects($this->once())
             ->method('decrypt')
             ->will($this->throwException(new Exception()));
 
-        $this->decrypter->decryptValue($encryptedValue);
+        $this->decrypter->decryptValue($encryptedValue, $decryptionKey);
     }
 
-    public function testDecryptValueSuccessWithKey()
+    public function testDecryptValueSuccess()
     {
         $encryptedValue = 'encoded encrypted value';
         $decryptionKey = 'some key';
         $prepDecodedValue = 'decoded encrypted value';
         $prepDecryptedValue = 'decrypted value';
 
-        $this->setUpDecoderDecode($encryptedValue, $prepDecodedValue);
+        $this->decoder->expects($this->once())
+            ->method('decode')
+            ->with($this->identicalTo($encryptedValue))
+            ->will($this->returnValue($prepDecodedValue));
 
-        $this->setUpCipherLoadKey($decryptionKey);
+        $this->cipher->expects($this->once())
+            ->method('loadKey')
+            ->with($this->identicalTo($decryptionKey));
 
-        $this->setUpCipherDecrypt($prepDecodedValue, $prepDecryptedValue);
+        $this->cipher->expects($this->once())
+            ->method('decrypt')
+            ->with($this->identicalTo($prepDecodedValue))
+            ->will($this->returnValue($prepDecryptedValue));
 
         $decryptedValue = $this->decrypter->decryptValue($encryptedValue, $decryptionKey);
-
-        $this->assertSame($prepDecryptedValue, $decryptedValue);
-    }
-
-    public function testDecryptValueSuccessWithoutKey()
-    {
-        $encryptedValue = 'encoded encrypted value';
-        $prepDecodedValue = 'some key';
-        $prepDecryptedValue = 'decrypted value';
-
-        $this->setUpDecoderDecode($encryptedValue, $prepDecodedValue);
-
-        $this->setUpCipherLoadKey(null);
-
-        $this->setUpCipherDecrypt($prepDecodedValue, $prepDecryptedValue);
-
-        $decryptedValue = $this->decrypter->decryptValue($encryptedValue);
 
         $this->assertSame($prepDecryptedValue, $decryptedValue);
     }
@@ -122,45 +114,5 @@ class PhpseclibRsaDecrypterTest extends \PHPUnit_Framework_TestCase
     private function createRsaMock()
     {
         return $this->getMockBuilder(RSA::class)->getMock();
-    }
-
-    /**
-     * Set up cipher: decrypt.
-     *
-     * @param string $decodedValue
-     * @param string $decryptedValue
-     */
-    private function setUpCipherDecrypt($decodedValue, $decryptedValue)
-    {
-        $this->cipher->expects($this->once())
-            ->method('decrypt')
-            ->with($this->identicalTo($decodedValue))
-            ->will($this->returnValue($decryptedValue));
-    }
-
-    /**
-     * Set up cipher: loadKey.
-     *
-     * @param string|null $decryptionKey
-     */
-    private function setUpCipherLoadKey($decryptionKey)
-    {
-        $this->cipher->expects($this->once())
-            ->method('loadKey')
-            ->with($this->identicalTo($decryptionKey));
-    }
-
-    /**
-     * Set up Decoder: decode.
-     *
-     * @param string $encryptedValue
-     * @param string $decodedValue
-     */
-    private function setUpDecoderDecode($encryptedValue, $decodedValue)
-    {
-        $this->decoder->expects($this->once())
-            ->method('decode')
-            ->with($this->identicalTo($encryptedValue))
-            ->will($this->returnValue($decodedValue));
     }
 }
