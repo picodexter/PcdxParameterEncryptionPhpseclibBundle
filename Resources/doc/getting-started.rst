@@ -54,11 +54,12 @@ in the ``app/AppKernel.php`` file of your project:
 Step 3: Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-You can now use the following services in the PcdxParameterEncryptionBundle configuration:
+You can now use the following services in the ``PcdxParameterEncryptionBundle``
+configuration:
 
-*   encrypter:
+*   Encrypter:
 
-    *   symmetric ciphers:
+    *   Symmetric ciphers:
 
         *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.3des``
         *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.aes.KEY_LENGTH``
@@ -71,13 +72,13 @@ You can now use the following services in the PcdxParameterEncryptionBundle conf
             where ``KEY_LENGTH`` is the key length and can be 128, 160, 192, 224 or 256
         *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.twofish``
 
-    *   asymmetric ciphers:
+    *   Asymmetric ciphers:
 
         *   ``pcdx_parameter_encryption_phpseclib.encryption.encrypter.phpseclib.rsa``
 
-*   decrypter:
+*   Decrypter:
 
-    *   symmetric ciphers:
+    *   Symmetric ciphers:
 
         *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.3des``
         *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.aes.KEY_LENGTH``
@@ -90,7 +91,7 @@ You can now use the following services in the PcdxParameterEncryptionBundle conf
             where ``KEY_LENGTH`` is the key length and can be 128, 160, 192, 224 or 256
         *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.twofish``
 
-    *   asymmetric ciphers:
+    *   Asymmetric ciphers:
 
         *   ``pcdx_parameter_encryption_phpseclib.encryption.decrypter.phpseclib.rsa``
 
