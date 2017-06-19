@@ -15,18 +15,18 @@ You will be able to use the following ciphers:
 
 ### Symmetric Ciphers
 
-* AES
-* Blowfish
-* DES
-* RC2
-* RC4
-* Rijndael
-* Triple DES / 3DES
-* Twofish
+*   AES
+*   Blowfish
+*   DES
+*   RC2
+*   RC4
+*   Rijndael
+*   Triple DES / 3DES
+*   Twofish
 
 ### Asymmetric Ciphers
 
-* RSA
+*   RSA
 
 ## Documentation
 
