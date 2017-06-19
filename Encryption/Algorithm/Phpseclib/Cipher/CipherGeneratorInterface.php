@@ -21,8 +21,8 @@ interface CipherGeneratorInterface
     /**
      * Generate cipher.
      *
-     * @param string|null $key
-     * @param int|null    $keyLength
+     * @param string   $key
+     * @param int|null $keyLength
      *
      * @return BaseCipher
      */

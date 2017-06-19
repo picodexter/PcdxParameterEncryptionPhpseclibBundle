@@ -313,8 +313,8 @@ class PhpseclibInitializationVectorCipherDecrypterHandlerTest extends \PHPUnit_F
     /**
      * Set up CipherGenerator: generateCipher.
      *
-     * @param string|null $decryptionKey
-     * @param BaseCipher  $cipher
+     * @param string     $decryptionKey
+     * @param BaseCipher $cipher
      */
     private function setUpCipherGeneratorGenerateCipher($decryptionKey, BaseCipher $cipher)
     {
