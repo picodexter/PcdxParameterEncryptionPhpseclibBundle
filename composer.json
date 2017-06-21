@@ -2,7 +2,7 @@
     "name": "picodexter/parameter-encryption-phpseclib-bundle",
     "type": "symfony-bundle",
     "description": "Symfony PcdxParameterEncryptionBundle add-on for phpseclib/phpseclib",
-    "keywords": ["config", "parameter", "encryption", "phpseclib/phpseclib"],
+    "keywords": ["config", "parameter", "encryption", "phpseclib"],
     "homepage": "https://picodexter.io/",
     "license": "MIT",
     "authors": [
