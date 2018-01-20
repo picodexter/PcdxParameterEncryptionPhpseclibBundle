@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-*   Added support for Symfony version 4.x
+*   (empty)
 
 ### Changed
 
@@ -18,8 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
-*   Removed PHP CS Fixer dist config file from git exports
-*   Removed PHPUnit dist config file from git exports
+*   (empty)
 
 ### Fixed
 
@@ -28,6 +27,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 
 *   (empty)
+
+## 1.1.0 (2018-01-20)
+
+### Added
+
+*   Added support for Symfony version 4.x
+
+### Removed
+
+*   Removed PHP CS Fixer dist config file from git exports
+*   Removed PHPUnit dist config file from git exports
 
 ## 1.0.0 (2017-06-21)
 
