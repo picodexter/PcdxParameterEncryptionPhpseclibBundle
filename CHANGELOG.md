@@ -6,7 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-*   (empty)
+*   Added Composer scripts for PHPUnit
+*   Added Composer scripts for PHP CS Fixer
 
 ### Changed
 
