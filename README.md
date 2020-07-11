@@ -1,5 +1,19 @@
 # PcdxParameterEncryptionPhpseclibBundle
 
+## DEPRECATION WARNING!
+
+### THIS BUNDLE IS NOW DEPRECATED / ABANDONED
+
+The [Symfony Secrets management](https://symfony.com/doc/current/configuration/secrets.html)
+that was introduced with Symfony 4.4 offers an official solution for the
+original purpose of this bundle.
+
+Please refer to it instead.
+
+Active development on this project has therefore been stopped.
+
+## END OF DEPRECATION WARNING
+
 This bundle is an add-on for the
 [PcdxParameterEncryptionBundle](https://github.com/picodexter/PcdxParameterEncryptionBundle)
 and enables simple usage of it in combination with the Composer package
